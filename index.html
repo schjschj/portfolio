@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>송충종 — PORTFOLIO BOY</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="gameboy" aria-label="게임보이 포트폴리오">
+    <div class="bezel">
+      <div class="bezel-top"><span>DOT MATRIX WITH STEREO SOUND</span></div>
+      <div class="power"><i id="powerLed"></i>POWER</div>
+      <div class="screen" id="screen" tabindex="0" aria-live="polite"></div>
+    </div>
+    <div class="logo">Portfolio <b>BOY</b><sup>™</sup></div>
+
+    <div class="controls">
+      <div class="dpad">
+        <button data-key="up" class="d up" aria-label="위"></button>
+        <button data-key="left" class="d left" aria-label="왼쪽"></button>
+        <span class="d center"></span>
+        <button data-key="right" class="d right" aria-label="오른쪽"></button>
+        <button data-key="down" class="d down" aria-label="아래"></button>
+      </div>
+      <div class="ab">
+        <div><button data-key="b" class="btn-round" aria-label="B">B</button></div>
+        <div><button data-key="a" class="btn-round" aria-label="A">A</button></div>
+      </div>
+    </div>
+
+    <div class="startselect">
+      <div><button data-key="select" class="pill" aria-label="SELECT"></button><span>SELECT</span></div>
+      <div><button data-key="start" class="pill" aria-label="START"></button><span>START</span></div>
+    </div>
+
+    <div class="speaker"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  </main>
+
+  <aside class="help">
+    ⌨ 방향키 이동 · <b>Z/Enter</b> = A · <b>X/Esc</b> = B · <b>Space</b> = START · <b>M</b> = 사운드
+    <button id="muteBtn">🔊 SOUND ON</button>
+  </aside>
+
+  <script src="game.js"></script>
+</body>
+</html>

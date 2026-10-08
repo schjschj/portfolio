@@ -174,7 +174,7 @@ const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt
 const VISIBLE = 6;
 
 function listHTML(items, idx, compact = false) {
-  const vis = compact ? 8 : 4;
+  const vis = compact ? 8 : 3;
   const start = Math.max(0, Math.min(idx - 1, items.length - vis));
   return `<ul class="list${compact ? ' compact' : ''}">` + items.slice(start, start + vis).map((it, i) => {
     const n = start + i;
@@ -244,7 +244,7 @@ function render() {
         ${listHTML(DATA.certs, S.idx)}<div class="hint">A 상세 · B 뒤로</div></div>`;
       break;
     case 'edu':
-      h = `<div class="view"><div class="hdr">학력 <small>SAVE DATA</small></div>
+      h = `<div class="view"><div class="hdr">학력 <small>${S.idx + 1}/${DATA.edu.length}</small></div>
         ${listHTML(DATA.edu, S.idx)}<div class="hint">A 상세 · B 뒤로</div></div>`;
       break;
     case 'skills': {
@@ -295,8 +295,8 @@ function fitDialog() {
     txt.innerHTML = esc(d.lines[d.page]).replace(/\n/g, '<br>');
     let fs = 100;
     txt.style.fontSize = fs + '%';
-    while (fs > 55 && (txt.scrollWidth > txt.clientWidth + 1 || box.scrollHeight > box.clientHeight + 1)) {
-      fs -= 4; txt.style.fontSize = fs + '%';
+    while (fs > 85 && box.scrollHeight > box.clientHeight + 1) {
+      fs -= 3; txt.style.fontSize = fs + '%';
     }
     d.fs = fs; txt.innerHTML = shown;
   }

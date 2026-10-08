@@ -111,7 +111,7 @@ body {
 .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px; }
 
 .box { border: 3px double var(--g0); background: var(--g3); padding: 6px 8px; box-shadow: 0 0 0 2px var(--g3); }
-.dialog { position: absolute; left: 4%; right: 4%; bottom: 4%; min-height: 36%; max-height: 70%; overflow: hidden; z-index: 5; }
+.dialog { position: absolute; left: 3%; right: 3%; bottom: 3%; min-height: 42%; max-height: 72%; padding: 8px 10px 12px; overflow: hidden; z-index: 5; }
 .dialog .more { position: absolute; right: 8px; bottom: 2px; animation: blink .8s steps(1) infinite; }
 .dialog .who { font-weight: bold; margin-bottom: 2px; }
 
@@ -162,5 +162,10 @@ canvas.avatar { image-rendering: pixelated; width: 34%; border: 2px solid var(--
 .skill-row { font-size: .82em; line-height: 1.3; }
 .skill-row .bar { height: 7px; margin: 1px 0 3px; }
 
-.dialog .txt { white-space: nowrap; overflow: hidden; }
+.dialog .txt {
+  white-space: pre-wrap;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-height: 1.45;
+}
 .list.compact li { padding: 1px 0 1px 1.2em; font-size: .92em; }
